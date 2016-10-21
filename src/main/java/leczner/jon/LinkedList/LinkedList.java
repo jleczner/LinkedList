@@ -51,18 +51,25 @@ public class LinkedList {
 
     public boolean contains(int element) {
         boolean isContained = false;
-        Node current = head;
-        while (current != null) {
-            if (current.data == element) {
-                isContained = true;
-            }
-            current = current.next;
+        if (find(element) != -1) {
+            isContained = true;
         }
         return isContained;
     }
 
     public int find(int element) {
-        return -1;
+        int foundIndex = -1;
+        int currentIndex = 0;
+        Node current = head;
+
+        while (current != null) {
+            if (current.data == element) {
+                foundIndex = currentIndex;
+            }
+            current = current.next;
+            currentIndex++;
+        }
+        return foundIndex;
     }
 
     public int size() {

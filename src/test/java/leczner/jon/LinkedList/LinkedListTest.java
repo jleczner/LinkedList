@@ -47,6 +47,9 @@ public class LinkedListTest {
     @Test
     public void findTest() {
         assertEquals(0, linkedList.find(5));
+        assertEquals(1, linkedList.find(4));
+        assertEquals(2, linkedList.find(7));
+        assertEquals(-1, linkedList.find(8));
     }
 
     @Test
