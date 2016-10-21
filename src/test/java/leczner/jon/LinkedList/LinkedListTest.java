@@ -21,12 +21,35 @@ public class LinkedListTest {
 
     @Test
     public void addTest() {
-        assertNotNull(linkedList.getHead());
+        assertTrue(linkedList.contains(5));
+        assertTrue(linkedList.contains(7));
+        assertTrue(linkedList.contains(4));
+        assertEquals(3, linkedList.size());
     }
 
     @Test
     public void removeTest() {
         assertNotNull(linkedList.remove(0));
+        assertTrue(linkedList.contains(7));
+        assertTrue(linkedList.contains(4));
+        assertFalse(linkedList.contains(5));
+    }
+
+    @Test
+    public void removeMiddleTest() {
+        linkedList.remove(1);
+        assertTrue(linkedList.size() == 2);
+        assertTrue(linkedList.contains(5));
+        assertTrue(linkedList.contains(7));
+        assertFalse(linkedList.contains(4));
+    }
+
+    @Test
+    public void removeLastTest() {
+        assertNotNull(linkedList.remove(2));
+        assertTrue(linkedList.contains(5));
+        assertTrue(linkedList.contains(4));
+        assertFalse(linkedList.contains(7));
     }
 
     @Test
@@ -55,6 +78,14 @@ public class LinkedListTest {
     @Test
     public void sizeTest() {
         assertEquals(3, linkedList.size());
+    }
+
+    @Test
+    public void sizeZeroTest() {
+        linkedList.remove(0);
+        linkedList.remove(0);
+        linkedList.remove(0);
+        assertEquals(0, linkedList.size());
     }
 
     @Test

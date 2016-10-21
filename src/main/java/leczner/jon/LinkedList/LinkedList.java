@@ -35,17 +35,34 @@ public class LinkedList {
     }
 
     public Node remove(int index) {
-        int i = -1;
-        Node current = head;
-        while (++i != index) {
-            if (current.next != null) {
-                current = current.next;
+        if (head == null) {
+            return null;
+        }
+        Node toBeRemoved = null;
+        if (index == 0) {
+            toBeRemoved = head;
+            if (head.next != null) {
+                head = head.next;
             } else {
-                return null;
+                head = null;
+            }
+        } else {
+            int i = 0;
+            Node current = head;
+            while (++i != index) {
+                if (current.next != null) {
+                    current = current.next;
+                } else {
+                    return null;
+                }
+            }
+            toBeRemoved = current.next;
+            if (toBeRemoved.next != null) {
+                current.next = toBeRemoved.next;
+            } else {
+                current.next = null;
             }
         }
-        Node toBeRemoved = current.next;
-        current.next = null;
         return toBeRemoved;
     }
 
@@ -73,7 +90,13 @@ public class LinkedList {
     }
 
     public int size() {
-        return -1;
+        int size = 0;
+        Node current = head;
+        while (current != null) {
+            size++;
+            current = current.next;
+        }
+        return size;
     }
 
     public int get(int index) {
