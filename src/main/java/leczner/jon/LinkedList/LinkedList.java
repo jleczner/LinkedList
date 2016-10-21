@@ -22,15 +22,43 @@ public class LinkedList {
     }
 
     public void add(int data) {
-        return;
+        Node toBeAdded = new Node(data);
+        if (head != null) {
+            Node current = head;
+            while (current.next != null) {
+                current = current.next;
+            }
+            current.next = toBeAdded;
+        } else {
+            head = toBeAdded;
+        }
     }
 
     public Node remove(int index) {
-        return null;
+        int i = -1;
+        Node current = head;
+        while (++i != index) {
+            if (current.next != null) {
+                current = current.next;
+            } else {
+                return null;
+            }
+        }
+        Node toBeRemoved = current.next;
+        current.next = null;
+        return toBeRemoved;
     }
 
     public boolean contains(int element) {
-        return false;
+        boolean isContained = false;
+        Node current = head;
+        while (current != null) {
+            if (current.data == element) {
+                isContained = true;
+            }
+            current = current.next;
+        }
+        return isContained;
     }
 
     public int find(int element) {
