@@ -1,15 +1,22 @@
 package leczner.jon.LinkedList;
 
+import org.junit.Before;
 import org.junit.Test;
 
 /**
  * Created by jonathanleczner on 10/21/16.
  */
 public class LinkedListTest {
+    LinkedList linkedList;
+
+    @Before
+    public void setup() {
+        linkedList = new LinkedList();
+    }
 
     @Test
     public void addTest() {
-        LinkedList linkedList = new LinkedList();
+        linkedList.add(5);
     }
 
     @Test

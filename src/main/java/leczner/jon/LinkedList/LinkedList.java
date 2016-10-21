@@ -8,7 +8,7 @@ public class LinkedList {
 
     public LinkedList() {}
 
-    class Node {
+    private class Node {
         int data;
         Node next;
 
@@ -17,7 +17,7 @@ public class LinkedList {
         }
     }
 
-    public void add(Node node) {
+    public void add(int data) {
         return;
     }
 
@@ -25,27 +25,27 @@ public class LinkedList {
         return null;
     }
 
-    public boolean contains(Node list) {
+    public boolean contains(int element) {
         return false;
     }
 
-    public int find(Node list) {
+    public int find(int element) {
         return -1;
     }
 
-    public int size(Node list) {
+    public int size() {
         return -1;
     }
 
-    public Node get(int index) {
+    public int get(int index) {
+        return -1;
+    }
+
+    public LinkedList copy() {
         return null;
     }
 
-    public Node copy(Node list) {
-        return null;
-    }
-
-    public Node sort(Node list) {
+    public LinkedList sort() {
         return null;
     }
 
