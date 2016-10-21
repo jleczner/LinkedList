@@ -3,6 +3,8 @@ package leczner.jon.LinkedList;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertNotNull;
+
 /**
  * Created by jonathanleczner on 10/21/16.
  */
@@ -17,6 +19,7 @@ public class LinkedListTest {
     @Test
     public void addTest() {
         linkedList.add(5);
+        assertNotNull(linkedList.getHead());
     }
 
     @Test

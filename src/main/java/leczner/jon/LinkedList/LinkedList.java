@@ -4,7 +4,7 @@ package leczner.jon.LinkedList;
  * Created by jonathanleczner on 10/21/16.
  */
 public class LinkedList {
-    Node head;
+    private Node head;
 
     public LinkedList() {}
 
@@ -15,6 +15,10 @@ public class LinkedList {
         public Node(int data) {
             this.data = data;
         }
+    }
+
+    public Node getHead() {
+        return head;
     }
 
     public void add(int data) {
