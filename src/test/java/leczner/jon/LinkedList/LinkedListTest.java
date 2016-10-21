@@ -90,7 +90,14 @@ public class LinkedListTest {
 
     @Test
     public void getTest() {
+        assertEquals(5, linkedList.get(0));
         assertEquals(4, linkedList.get(1));
+        assertEquals(7, linkedList.get(2));
+    }
+
+    @Test
+    public void getFailTest() {
+        assertEquals(-1, linkedList.get(3));
     }
 
     @Test

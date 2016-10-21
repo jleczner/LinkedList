@@ -3,7 +3,7 @@ package leczner.jon.LinkedList;
 /**
  * Created by jonathanleczner on 10/21/16.
  */
-public class LinkedList {
+public class LinkedList { // for storing positive integers
     private Node head;
 
     public LinkedList() {}
@@ -100,7 +100,23 @@ public class LinkedList {
     }
 
     public int get(int index) {
-        return -1;
+        int data = -1;
+        if (index == 0) {
+            return head.data;
+        } else {
+            int i = 0;
+            Node current = head;
+
+            while (++i != index) {
+                if (current.next != null) {
+                    current = current.next;
+                } else {
+                    return data;
+                }
+            }
+            data = current.next.data;
+        }
+        return data;
     }
 
     public LinkedList copy() {
